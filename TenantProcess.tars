@@ -1,0 +1,30 @@
+module civetTenantCenter
+{
+	struct UserBasicInfo
+	{
+		0 require  int id;
+		1 optional string username;
+		2 optional string name;
+		3 optional string password;
+		4 optional string number;
+		5 optional string email;
+		6 optional string sex;
+		7 optional string enable;
+		8 optional string wechatID;
+		9 optional  int Role;
+		10 optional int enterprise;
+		11 optional int department;
+		12 optional long createTime;
+		13 optional long UpdateTime;
+	};
+	interface TenantProcess
+	{
+		int userAdd(int CompanyID,UserBasicInfo info,out int result); // 增加用户
+		int userUpdateByString(int CompanyID,int id,string keyword,string value,out int result); // 修改用户
+		int userDelete(int CompanyID,int id,out int result); // 删除用户
+		int checkPassword(int CompanyID,UserBasicInfo info,out bool result);
+		int userQueryAll(int CompanyID,int numbers,int Pages,out vector<UserBasicInfo> UserMemberList, out int result);
+		int userQueryBykeyWordString(int CompanyID,string keyword,string stringWord,out UserBasicInfo UserMember,out int result);
+		int userQueryByKeyWordStringList(int CompanyID,string keyword,string stringWord,out vector<UserBasicInfo> UserMemberList, out int result);
+	};
+};

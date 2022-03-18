@@ -1,0 +1,21 @@
+module civetTenantCenter
+{
+    struct UserAuthDataInfo {
+		0 optional string username;
+		1 optional string password;
+		2 optional string companyID;
+		3 optional string phone;
+		4 optional string wechat;
+		5 optional string verifyCode;
+		6 optional string logintype;
+	};
+	interface Process
+	{
+	            int checkToken(int companyID,string token,out bool result);
+        		int refreshToken(int companyID,string oldtoken,out string newtoken);
+        		int login(UserAuthDataInfo info,out int result,out string token);
+        		int logout(string token,out int result);
+        		int loginByWechat(int companyID, UserAuthDataInfo info,out int result);
+        		int loginByPhone(int companyID, UserAuthDataInfo info,out int result);
+	};
+};

@@ -1,0 +1,35 @@
+{
+  "name": "TenantHttp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon app.js",
+    "eslint": "./node_modules/.bin/eslint ./ --ext .js",
+    "upload": "./node_modules/.bin/nodetools upload"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tars/nodetools-cli": "^0.0.10",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.3.1",
+    "eslint-config-alloy": "3.7.3",
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "@tars/rpc": "^2.0.14",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.14.0"
+  },
+  "tars": {
+    "tarsurl": "www.sundaytek.cn",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJhZG1pbiIsImlhdCI6MTY0NjM2Mzk1NywiZXhwIjoxNjQ4NzgzMTU3fQ.dphgrtCHOYOpeOjLzw9tFH5C8o3k3l9o7q-I6-7NF1U",
+    "platform": "linux",
+    "app": "civetTenantCenter",
+    "service": "TenantHttp",
+    "set": ""
+  }
+}
